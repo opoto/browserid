@@ -30,12 +30,9 @@ $fields = array(
     'assertion' => urldecode($_POST['assertion']),
     'audience' => $myserver
 );
-echo "\nfields: ";
-var_dump($fields);
 
 session_start();
-echo "\nsession: ";
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 $response = http_post_fields("https://verifier.login.persona.org/verify", $fields);
 $json = json_decode($response);
